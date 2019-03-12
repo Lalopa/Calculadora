@@ -1,0 +1,18 @@
+.button{
+     -fx-display:inline-block;
+     -fx-padding:0.35em 1.2em;
+     -fx-border:0.1em solid #FFFFFF;
+     -fx-margin:0 0.3em 0.3em 0;
+     fx-border-radius:0.12em;
+     fx-box-sizing: border-box;
+     fx-text-decoration:none;
+     fx-font-family:'Roboto',sans-serif;
+     fx-font-weight:300;
+     fx-color:#FFFFFF;
+     fx-text-align:center;
+     fx-transition: all 0.2s;
+}
+.button:hover{
+     fx-color:#000000;
+     fx-background-color:#FFFFFF;
+}

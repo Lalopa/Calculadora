@@ -1,0 +1,45 @@
+.root{
+     -fx-background-image: url("/sample/Source/imagenes/ITC.jpg"), url("/sample/Source/imagenes/IT.png");
+     -fx-background-size: 1366 1024, 325 200;
+     -fx-background-repeat: stretch, no-repeat;
+     -fx-background-position: center top, center top;
+ }
+
+.menu-bar{
+    -fx-background-color: #008080;
+    -fx-border-color: #004747;
+    -fx-border-width: 1;
+    -fx-text-fill: #000;
+}
+.menu:hover{
+    -fx-background-color: #005454;
+}
+.menu-item{
+    -fx-background-color: #008080;
+}
+
+.menu-item:hover{
+    -fx-background-color: #005454;
+}
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: #008080;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+
+
+/*.menu-item .label{
+    -fx-font-size: 15pt;
+    -fx-label-line-length: 8;
+    -fx-background-color: #006E6E;
+}
+*/
+
+/*#menu1:hover{
+    -fx-background-color: #000;
+}*/
+
+ /*https://examples.javacodegeeks.com/desktop-java/javafx-css-tutorial/
