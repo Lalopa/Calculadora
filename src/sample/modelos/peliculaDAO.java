@@ -65,12 +65,13 @@ public class peliculaDAO {
     }
 
     public void INSERT (){
+        String consulta = "INSERT INTO tblPelicula(nomPelicula,duracion,descripcion,clase,idCategoria) " +
+                "VALUES('"+nomPelicula+"',"+duracion+",'"+descPelicula+"','"+clase+"',"+idCategoria+")";
         try {
-            String query = "INSERT INTO tblpelicula() values('Prueba',120,'Descripcion prueba','b15',1)";
-            Statement statement = Conexion.con.createStatement();
-            statement.executeUpdate(query);
-        }catch (Exception e){
-
+            Statement stmt = Conexion.con.createStatement();
+            stmt.executeUpdate(consulta);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
     public void DELETE (){

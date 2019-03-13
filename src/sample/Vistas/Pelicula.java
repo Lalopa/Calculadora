@@ -1,20 +1,31 @@
 package sample.Vistas;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import sample.modelos.peliculaDAO;
 
 
-public class Pelicula {
+public class Pelicula extends Stage {
+
+    private TableView<peliculaDAO> tbvPeliculas;
 
     private Scene escena;
     private VBox vBox;
     private Label lblTitulo;
     private TextField txtNombPeli, txtDuraPeli, txtSinopsisPeli, txtClasePeli, txtCatPeli;
+    private Button btnGuardar;
 
-    public Pelicula(){
+    public Pelicula(TableView tbvPeliculas){
+        this.tbvPeliculas = tbvPeliculas;
         CrearUI();
+        this.setScene(escena);
+        this.setTitle("Altas y modificaciones de peliculas");
+        this.show();
     }
 
     private void CrearUI() {
@@ -31,8 +42,32 @@ public class Pelicula {
         txtClasePeli.setPromptText("Clase");
         txtCatPeli = new TextField();
         txtCatPeli.setPromptText("Categoria");
-        vBox.getChildren().addAll(lblTitulo, txtNombPeli,txtDuraPeli,txtSinopsisPeli,txtClasePeli,txtCatPeli);
+        btnGuardar = new Button("Guardar");
+        btnGuardar.setOnAction(event -> GuardarPelicula());
+        vBox.getChildren().addAll(lblTitulo, txtNombPeli,txtDuraPeli,txtSinopsisPeli,txtClasePeli,txtCatPeli,btnGuardar);
         escena = new Scene(vBox,250,300);
+    }
+
+    private void GuardarPelicula() {
+
+        String nomb = txtNombPeli.getText();
+        String dura = txtDuraPeli.getText();
+        String sino = txtSinopsisPeli.getText();
+        String clas = txtClasePeli.getText();
+        String cate = txtCatPeli.getText();
+
+        peliculaDAO objPDAO = new peliculaDAO();
+        objPDAO.setNomPelicula(nomb);
+        objPDAO.setDuracion(Integer.parseInt(dura));
+        objPDAO.setDescPelicula(sino);
+        objPDAO.setClase(clas);
+        objPDAO.setIdCategoria(Integer.parseInt(cate));
+        objPDAO.INSERT();
+
+        tbvPeliculas.setItems(objPDAO.SELECT());
+        tbvPeliculas.refresh();
+        this.close();
+
     }
 
 }

@@ -31,8 +31,13 @@ public class ListaPeliculas extends Stage {
         tbvPelicula = new TableView<>();
         CrearTabla();
         btnAgregar = new Button("Agregar");
+        btnAgregar.setOnAction(event -> AgregarPelicula());
         vBox.getChildren().addAll(tbvPelicula,btnAgregar);
         escena = new Scene(vBox, 200, 200);
+    }
+
+    private void AgregarPelicula() {
+        new Pelicula(tbvPelicula);
     }
 
     private void CrearTabla(){
