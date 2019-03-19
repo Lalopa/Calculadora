@@ -1,13 +1,10 @@
 package sample.Events;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
-import java.util.function.DoubleBinaryOperator;
 
 public class EventosCalculadora  implements EventHandler {
 
@@ -183,121 +180,4 @@ public class EventosCalculadora  implements EventHandler {
         if (anterior.get(i+1).equals("."))
             anterior.add(i+1,"0");
     }
-
-    private void ultimo() {
-        if (!valor1.equals("")&&!ultimo.equals("")) {
-            switch ((ultimo)) {
-                case "+": {
-                    if (valor1.equals("."))
-                        valor1 = "0";
-                    if (!valor2.equals(""))
-                        valor1 = "" + (Double.parseDouble(valor1) + Double.parseDouble(valor2));
-                }
-                break;
-                case "-": {
-                    if (valor1.equals("."))
-                        valor1 = "0";
-                    if (!valor2.equals(""))
-                        valor1 = "" + (Double.parseDouble(valor2) - Double.parseDouble(valor1));
-                }
-                break;
-                case "*": {
-                    if (valor1.equals("."))
-                        valor1 = "0";
-                    if (!valor2.equals(""))
-                        valor1 = "" + (Double.parseDouble(valor1) * Double.parseDouble(valor2));
-                }
-                break;
-                case "/": {
-                    if (valor1.equals("."))
-                        valor1 = "0";
-                    if (!valor2.equals(""))
-                        valor1 = "" + (Double.parseDouble(valor2) / Double.parseDouble(valor1));
-                }
-                break;
-            }
-            valor2 = "";
-            txtOperacion.setText(valor1);
-            valor1 = "";
-        }
-        else {
-            valor2 = "";
-            txtOperacion.setText("Ingrese Valores");
-            valor1 = "";
-        }
-    }
-    /*public void operaciones(String valor) {
-        switch (valor) {
-            case "+":
-                if (!txtOperacion.getText().equals(""))
-                    if (!valor1.equals("")) {
-                        valor2 = txtOperacion.getText();
-                        valor1 = "" + (Double.parseDouble(valor1) + Double.parseDouble(txtOperacion.getText()));
-                        txtOperacion.setText(valor1);
-                    } else {
-                        valor1 = txtOperacion.getText();
-                        txtOperacion.setText("");
-                        anterior = valor;
-                    }
-                else {
-                    txtOperacion.setText("Ingresa valores");
-                    banderaTexto=true;
-                }
-                break;
-            case "-":
-                if (!txtOperacion.equals(""))
-                    if (!valor1.equals("")) {
-                        valor2 = txtOperacion.getText();
-                        valor1 = "" + (Double.parseDouble(valor1) - Double.parseDouble(valor2));
-                        txtOperacion.setText(valor1);
-                    } else {
-                        valor1 = txtOperacion.getText();
-                        txtOperacion.setText("");
-                        anterior = valor;
-                    }
-                else {
-                    txtOperacion.setText("Ingresa valores");
-                    banderaTexto=true;
-                }
-                break;
-            case "*":
-                if (!txtOperacion.equals(""))
-                    if (!valor1.equals("")) {
-                        valor2 = txtOperacion.getText();
-                        valor1 = "" + (Double.parseDouble(valor1) * Double.parseDouble(valor2));
-                        txtOperacion.setText(valor1);
-                    } else {
-                        valor1 = txtOperacion.getText();
-                        txtOperacion.setText("");
-                        anterior = valor;
-                    }
-                else {
-                    txtOperacion.setText("Ingresa valores");
-                    banderaTexto=true;
-                }
-                break;
-            case "/":
-                if (!txtOperacion.equals(""))
-                    if (!valor1.equals("")) {
-                        valor2 = txtOperacion.getText();
-                        if (!valor2.equals("0"))
-                            valor1 = "" + (Double.parseDouble(valor1) / Double.parseDouble(valor2));
-                        else {
-                            txtOperacion.setText("No se puede dividir entre cero");
-                            banderaTexto = true;
-                        }
-                        valor2 = null;
-                        txtOperacion.setText(valor1);
-                        anterior = valor;
-                    } else {
-                        valor1 = txtOperacion.getText();
-                        txtOperacion.setText("");
-                    }
-                else {
-                    txtOperacion.setText("Ingresa valores");
-                    banderaTexto=true;
-                }
-                break;
-        }
-    }*/
 }

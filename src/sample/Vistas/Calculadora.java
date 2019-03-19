@@ -27,22 +27,18 @@
         private String [] valores = {"7","8","9","+","4","5","6","-","1","2","3","*",".","0","=","/"};
 
         public Calculadora(){
-
             CrearGUI();
-
             //Creando la ventana y mandando la parte principal en este caso Vbox
             scene = new Scene(vBox,200,200);
             setScene(scene);
             setTitle("Calculadorcita");
-            show();
             addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST,this);
             scene.getStylesheets().add(getClass().getResource("../Source/CSS/calculadora.css").toExternalForm());
-
+            show();
         }
 
         private void CrearGUI() {
             vBox = new VBox();
-
             //Crear instancia hacia la clase
             //EventosCalculadora objEvC = new EventosCalculadora();
             txtOperacion = new TextField();
@@ -90,10 +86,5 @@
 
         @Override
         public void handle(Event event) {
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.setTitle("Esta es una alerta informativa");
-            alerta.setHeaderText("Este es el encabezado de laa alerta :)");
-            alerta.setContentText("Aqui va todo el rollo de la alerta");
-            alerta.showAndWait();
         }
     }
