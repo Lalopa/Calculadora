@@ -1,0 +1,105 @@
+*.tab-header-area *.tab-header-background {
+    -fx-background-color: 'transparent';
+}
+.tab-header-background{
+    -fx-background-color: #fff;
+}
+.tab-pane {
+    -fx-tab-min-width:180px;
+    -fx-tab-max-width:180px;
+    -fx-tab-min-height:50px;
+    -fx-tab-max-height:50px;
+    -fx-font-family: 'Open Sans';
+}
+#vBoxPrincipal{
+    -fx-background-color: #F4EAC6;
+}
+.tab{
+    -fx-tab-min-width:180px;
+    -fx-tab-max-width:180px;
+    -fx-tab-min-height:50px;
+    -fx-tab-max-height:50px;
+    -fx-background-color:#F4EAC6 ;
+    -fx-font-family: 'Open Sans';
+}
+
+.tab:selected {
+    -fx-background-color:#FEFAEF ;
+}
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fuente/Pacifico-Regular.ttf");
+}
+.tab-label{
+    -fx-font-size: 18;
+    -fx-font-family: 'Open Sans';
+}
+.button{
+    -fx-font-family: 'Open Sans';
+}
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+#Cartas .label{
+    -fx-padding: 2;
+    -fx-font-size: 20px;
+    -fx-text-fill: #890202;
+    -fx-font-family: Wingdings;
+
+}
+
+#Cartas .VBox{
+    -fx-background-color: black;
+}
+
+#Cartas .button {
+    -fx-padding: 5px;
+    -fx-border-width: 120;
+    -fx-background-color: #D42A19;
+    -fx-text-fill: #CDCDCD;
+    -fx-border-radius: 5;
+
+    -fx-max-height: 25px;
+    -fx-max-width: 140px;
+    -fx-background-color: linear-gradient(#EC2739, #C92131);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+
+
+
+}
+#Cartas{
+    -fx-background-color:#FFF;
+
+
+}
+
+#Cartas .Image{
+
+}
+
+.tab-header-background{
+    -fx-background-color: #fff;
+}
+#hboxCartas{
+    -fx-background-color: #FEFAEF;
+}
+#btnNext{
+
+    -fx-background-color: linear-gradient(#93CD21, #72BA15);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+#btnAdd{
+
+    -fx-background-color: linear-gradient(#934E2C, #702B04);
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}

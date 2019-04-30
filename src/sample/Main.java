@@ -14,6 +14,7 @@ import sample.Vistas.ListaPeliculas;
 import sample.Vistas.Restaurante;
 import sample.Vistas.Taquimecanografo;
 import sample.modelos.Conexion;
+import sample.modelos.mainsRes;
 
 
 public class Main extends Application implements EventHandler
@@ -76,6 +77,11 @@ public class Main extends Application implements EventHandler
     }
 
     private void EventoItem(int opcion) {
+        mainsRes menu [] = new mainsRes[4];
+        menu[0] = new mainsRes("PIZZA");
+        menu[1] = new mainsRes("MODERN");
+        menu[2] = new mainsRes("MEAT");
+        menu[3] = new mainsRes("KIDS");
         switch (opcion){
             case 1:
                 new Calculadora();
@@ -84,7 +90,7 @@ public class Main extends Application implements EventHandler
                 new Taquimecanografo();
                 break;
             case 3:
-                new Restaurante();
+                new Restaurante(menu);
                 break;
             case 4:
                 new ListaPeliculas();
