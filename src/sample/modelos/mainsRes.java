@@ -3,7 +3,7 @@ package sample.modelos;
 public class mainsRes {
     static int cantidad;
     public String nombre;
-    public cartasRestaurante lista[];
+    public cartasRestaurante[] lista;
 
 
     public mainsRes(String nombre) {

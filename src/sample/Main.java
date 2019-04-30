@@ -9,10 +9,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import sample.Vistas.Calculadora;
-import sample.Vistas.ListaPeliculas;
-import sample.Vistas.Restaurante;
-import sample.Vistas.Taquimecanografo;
+import sample.Vistas.*;
 import sample.modelos.Conexion;
 import sample.modelos.mainsRes;
 
@@ -24,7 +21,7 @@ public class Main extends Application implements EventHandler
     //private Button btnSalir;
     private MenuBar menuBar;
     private Menu menuCompetencia1,menuCompetencia2,menuSalir;
-    private MenuItem menuItmCalculadora,menuItmTaquimecanografo,menuItmSalir, menuItmRestaurante, menuItmListaPelicula;
+    private MenuItem menuItmCalculadora,menuItmTaquimecanografo,menuItmSalir, menuItmRestaurante, menuItmListaPelicula, menuCuadroMagico;
     private BorderPane pane;
 
     @Override
@@ -59,6 +56,7 @@ public class Main extends Application implements EventHandler
         menuItmTaquimecanografo = new MenuItem("Taquimecanografo");
         menuItmRestaurante = new MenuItem("Restaurante");
         menuItmListaPelicula = new MenuItem("Lista Peliculas");
+        menuCuadroMagico = new MenuItem("Cuadro Magico");
         menuItmSalir = new MenuItem("Bye");
         menuItmSalir.setAccelerator(KeyCombination.keyCombination("Ctrl+x"));
         menuItmSalir.setOnAction(evento->EventoItem(0));
@@ -66,18 +64,19 @@ public class Main extends Application implements EventHandler
         menuItmTaquimecanografo.setOnAction(evento->EventoItem(2));
         menuItmCalculadora.setOnAction(evento->EventoItem(1));
         menuItmListaPelicula.setOnAction(evento->EventoItem(4));
+        menuCuadroMagico.setOnAction(event -> EventoItem(5));
 
     }
 
     private void anadirComponentes(){
-        menuCompetencia1.getItems().addAll(menuItmCalculadora,menuItmTaquimecanografo, menuItmRestaurante, menuItmListaPelicula);
+        menuCompetencia1.getItems().addAll(menuItmCalculadora,menuItmTaquimecanografo, menuItmRestaurante, menuItmListaPelicula, menuCuadroMagico);
         menuSalir.getItems().add(menuItmSalir);
         menuBar.getMenus().addAll(menuCompetencia1,menuCompetencia2,menuSalir);
         pane.setTop(menuBar);
     }
 
     private void EventoItem(int opcion) {
-        mainsRes menu [] = new mainsRes[4];
+        mainsRes[] menu = new mainsRes[4];
         menu[0] = new mainsRes("PIZZA");
         menu[1] = new mainsRes("MODERN");
         menu[2] = new mainsRes("MEAT");
@@ -94,6 +93,8 @@ public class Main extends Application implements EventHandler
                 break;
             case 4:
                 new ListaPeliculas();
+            case 5:
+                new cuadro();
             case 0:
                 System.exit(0);
                 break;

@@ -19,18 +19,18 @@ public class Restaurante extends Stage {
 
     private Scene escena;
     private TabPane tabPane;
-    private Tab tab[];
+    private Tab[] tab;
     private HBox hBox;
     private ScrollPane scrollPane;
-    private VBox vBox[];
+    private VBox[] vBox;
     private VBox vBoxPrincipal;
-    mainsRes menu[];
+    mainsRes[] menu;
     private ImageView imageView;
     private Label lblName, lblPrice;
     private Button btnAdd, btnNext;
 
     // launch the application
-    public Restaurante(mainsRes menu[])
+    public Restaurante(mainsRes[] menu)
     {
         this.menu=menu;
         crearGUI();
@@ -84,7 +84,7 @@ public class Restaurante extends Stage {
         btnAdd.setId("btnAdd");
         btnAdd.setPadding(new Insets(10,442,10,442));
         vBoxPrincipal.getChildren().addAll(btnAdd,tabPane, btnNext);
-        vBoxPrincipal.setMargin(btnNext, new Insets(10,10,10,10));
+        VBox.setMargin(btnNext, new Insets(10,10,10,10));
         vBoxPrincipal.setAlignment(Pos.TOP_CENTER);
 
     }
